@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../hooks/useCart';
-import { buildPayFastPaymentUrl, storePaymentData } from '../services/paymentService';
+import { createPayFastPayment, submitPayFastForm, storePaymentData } from '../services/paymentService';
 import Footer from '../components/Footer';
 
 const CheckoutPage = () => {
@@ -58,7 +58,7 @@ const CheckoutPage = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     if (!validateForm()) {
@@ -81,13 +81,21 @@ const CheckoutPage = () => {
       };
 
       storePaymentData(paymentData);
+
+      const result = await createPayFastPayment(paymentData);
+
+      if (!result.success || !result.data || !result.payfastUrl) {
+        throw new Error(result.error || 'Failed to create payment');
+      }
+
       clearCart();
 
-      const paymentUrl = buildPayFastPaymentUrl(paymentData);
-      window.location.href = paymentUrl;
+      submitPayFastForm(result.data, result.payfastUrl);
     } catch (error) {
       console.error('Payment error:', error);
-      setErrors({ submit: 'An error occurred. Please try again.' });
+      setErrors({
+        submit: error instanceof Error ? error.message : 'An error occurred. Please try again.'
+      });
       setIsLoading(false);
     }
   };
