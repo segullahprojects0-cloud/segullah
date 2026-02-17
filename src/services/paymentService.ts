@@ -6,36 +6,64 @@ interface PayFastPaymentData {
   items: Array<{ name: string; quantity: number; price: number }>;
 }
 
-export const buildPayFastPaymentUrl = (paymentData: PayFastPaymentData): string => {
-  const merchantId = import.meta.env.VITE_PAYFAST_MERCHANT_ID;
-  const merchantKey = import.meta.env.VITE_PAYFAST_MERCHANT_KEY;
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
 
-  const isProduction = import.meta.env.PROD;
-  const baseUrl = isProduction
-    ? 'https://www.payfast.co.za/eng/process'
-    : 'https://sandbox.payfast.co.za/eng/process';
+export const createPayFastPayment = async (paymentData: PayFastPaymentData): Promise<{
+  success: boolean;
+  data?: any;
+  payfastUrl?: string;
+  error?: string;
+}> => {
+  try {
+    const itemName = paymentData.items
+      .map(item => `${item.name} x${item.quantity}`)
+      .join(', ');
 
-  const data: Record<string, string | number> = {
-    merchant_id: merchantId || '',
-    merchant_key: merchantKey || '',
-    return_url: `${window.location.origin}/payment-success`,
-    cancel_url: `${window.location.origin}/payment-cancelled`,
-    notify_url: `${window.location.origin}/api/payfast/notify`,
-    name_first: paymentData.name.split(' ')[0] || '',
-    name_last: paymentData.name.split(' ').slice(1).join(' ') || '',
-    email_address: paymentData.email,
-    cell_number: paymentData.phone,
-    m_payment_id: `order_${Date.now()}`,
-    amount: (paymentData.amount * 100).toFixed(0),
-    item_name: paymentData.items.map(item => `${item.name} x${item.quantity}`).join(', '),
-    item_description: paymentData.items.map(item => `${item.name} (${item.quantity})`).join(', '),
-  };
+    const response = await fetch(`${API_BASE_URL}/api/create-payment`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        amount: paymentData.amount,
+        itemName,
+        customerName: paymentData.name,
+        customerEmail: paymentData.email,
+        customerPhone: paymentData.phone,
+      }),
+    });
 
-  const queryString = Object.entries(data)
-    .map(([key, value]) => `${key}=${encodeURIComponent(String(value))}`)
-    .join('&');
+    if (!response.ok) {
+      const error = await response.json();
+      throw new Error(error.error || 'Failed to create payment');
+    }
 
-  return `${baseUrl}?${queryString}`;
+    const result = await response.json();
+    return result;
+  } catch (error) {
+    console.error('Payment creation error:', error);
+    return {
+      success: false,
+      error: error instanceof Error ? error.message : 'Unknown error occurred',
+    };
+  }
+};
+
+export const submitPayFastForm = (data: Record<string, string>, payfastUrl: string) => {
+  const form = document.createElement('form');
+  form.method = 'POST';
+  form.action = payfastUrl;
+
+  Object.entries(data).forEach(([key, value]) => {
+    const input = document.createElement('input');
+    input.type = 'hidden';
+    input.name = key;
+    input.value = value;
+    form.appendChild(input);
+  });
+
+  document.body.appendChild(form);
+  form.submit();
 };
 
 export const storePaymentData = (paymentData: PayFastPaymentData) => {
