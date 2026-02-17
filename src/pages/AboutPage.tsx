@@ -25,13 +25,34 @@ const AboutPage = () => {
       </section>
               <div className="space-y-4 text-gray-300 leading-relaxed">
                 <p className="text-lg">
-                  Based in <span className="text-orange-500 font-medium">Greenhills, Randfontein, South Africa</span>, we are a professional signage and branding company serving local and regional businesses.
+                  Segullah Projects is a dynamic and innovative branding company dedicated to helping businesses build powerful, memorable brands. Headquartered <span className="text-orange-500 font-medium">Randfontein, South Africa</span>, we proudly extend our services across regions with offices in Pretoria, South Africa, and Lusaka, Zambia.
                 </p>
                 <p>
-                  Focused on delivering visual communication solutions that strengthen brand presence and recognition, we combine strategic thinking with creative excellence.
+                 We specialize in delivering creative and strategic solutions that elevate your company’s visibility and professional image. 
                 </p>
                 <p>
-                  Our approach transforms businesses by creating cohesive brand experiences that resonate with audiences and drive meaningful engagement.
+                 Our expertise includes: 
+                </p>
+                <p>
+                 Web Development – Designing and developing modern, responsive, and user-friendly websites tailored to your business goals. 
+                </p>
+                <p>
+                 App Development – Creating functional, scalable, and innovative mobile applications for Android and iOS platforms. 
+                </p>
+                <p>
+                 Billboard Installations – Professional design, production, and installation of high-impact outdoor advertising solutions. 
+                </p>
+                <p>
+                 Graphic Design – Creative branding materials including logos, company profiles, marketing materials, and promotional graphics. 
+                </p>
+                <p>
+                 Vehicle Wrapping – High-quality vehicle branding that turns your cars, trucks, and fleet into moving advertisements.
+                </p>
+                <p>
+                 Corporate Branding – Complete branding solutions including signage, uniforms, promotional products, and brand identity development.
+                </p>
+                <p>
+                 At Segullah Projects, we combine creativity, technology, and strategy to deliver results that not only look good but drive real business growth. Our presence in multiple locations allows us to serve clients efficiently while maintaining high standards of quality, innovation, and customer satisfaction.
                 </p>
               </div>
 

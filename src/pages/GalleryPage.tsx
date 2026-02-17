@@ -23,7 +23,7 @@ const GalleryPage = () => {
         },
         {
           title: 'DTF Printing',
-          images: ['/large.jpg', '/graphic.PNG', '/branding1.PNG', '/billboard.jpg'],
+          images: ['/dtf.jpg'],
         },
          {
           title: 'Customised Calendars',
@@ -31,7 +31,7 @@ const GalleryPage = () => {
         },
         {
           title: 'Customised Coffee Mugs',
-          images: ['/Customised Coffee Mugs.jpg'],
+          images: ['/customised coffee mugs.jpg'],
         },
          {
           title: 'Customised Bags',
@@ -39,19 +39,19 @@ const GalleryPage = () => {
         },
          {
           title: 'Customised google frames',
-          images: ['/Customised Google frames.jpg'],
+          images: ['/customised google frames.jpg'],
         },
           {
           title: 'Customised Key Holders',
-          images: ['/Customised key holders.jpg','/Customised key holders1.jpg','/Customised key holders2.jpg','/Customised key holders3.jpg','/Customised key holders4.jpg','/Customised key holders5.jpg','/Customised key holders6.jpg'],
+          images: ['/customised key holders.jpg','/customised key holders1.jpg','/customised key holders2.jpg','/customised key holders3.jpg','/customised key holders4.jpg','/customised key holders5.jpg','/customised key holders6.jpg'],
         },
          {
           title: 'Customised Pillows',
-          images: ['/Customised pillows1.jpg','/Customised pillows2.jpg'],
+          images: ['/customised pillows1.jpg','/customised pillows2.jpg'],
         },
           {
           title: 'Customised Water Bottles',
-          images: ['/Customised water bottles.jpg','/Customised water bottles1.jpg','/Customised water bottles2.jpg'],
+          images: ['/customised water bottles.jpg','/customised water bottles1.jpg','/customised water bottles2.jpg'],
         },
         
          {
@@ -65,7 +65,7 @@ const GalleryPage = () => {
       services: [
         {
           title: 'Graphic Design',
-          images: ['/graphic.PNG', '/branding1.PNG'],
+          images: ['/graphic1.jpg', '/graphic2.jpg'],
         },
         {
           title: 'Social Media Design',
@@ -80,11 +80,11 @@ const GalleryPage = () => {
       ],
     },
     {
-      category: 'Branding & Strategy',
+      category: 'Corporate Branding',
       services: [
         {
-          title: 'Brand Strategy & Positioning',
-          images: ['/branding1.PNG', '/graphic.PNG', '/large.jpg'],
+          title: 'Branding',
+          images: ['/corporate.jpg'],
         },
          
       ],
