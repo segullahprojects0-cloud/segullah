@@ -12,15 +12,15 @@ interface Product {
 
 const products: Product[] = [
   {
-    id: 'tshirt-1',
-    name: 'Classic T-Shirt',
+    id: 'mugs',
+    name: 'customised coffee mugs',
     price: 250,
     image: '/customised coffee mugs.jpg',
     category: 'T-Shirts',
   },
   {
-    id: 'tshirt-2',
-    name: 'Premium T-Shirt',
+    id: 'Bottles',
+    name: 'customised water bottles',
     price: 350,
     image: '/customised water bottles.jpg',
     category: 'T-Shirts',
