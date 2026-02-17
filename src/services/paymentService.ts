@@ -6,7 +6,11 @@ interface PayFastPaymentData {
   items: Array<{ name: string; quantity: number; price: number }>;
 }
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+const API_BASE_URL = import.meta.env.VITE_API_URL;
+
+if (!API_BASE_URL) {
+  throw new Error('VITE_API_URL is not defined');
+}
 
 export const createPayFastPayment = async (paymentData: PayFastPaymentData): Promise<{
   success: boolean;
