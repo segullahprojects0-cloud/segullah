@@ -108,7 +108,7 @@ const ServicesPage = () => {
             <div className="grid md:grid-cols-2 gap-12 items-center mb-12 animate-slide-in-left">
               <div>
                 <img
-                  src="/branding1.PNG"
+                  src="/branding2.jpg"
                   alt="Branding solutions showcase"
                   className="w-full rounded-lg"
                 />
