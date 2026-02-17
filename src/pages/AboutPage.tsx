@@ -16,13 +16,15 @@ const AboutPage = () => {
                   Projects & Designs
                 </h1>
               </div>
-                  <section className="relative">
-        <video   
-        >
-           <source src="/segulavid.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      </section>
+            
+             <div className="relative animate-slide-in-right">
+              <img
+                src="/bill3.jpg"
+                alt="Modern Billboards"
+                className="aspect-square w-full object-cover rounded-lg"
+              />
+              <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-orange-500 opacity-20 rounded-lg -z-10"></div>
+            </div>
               <div className="space-y-4 text-gray-300 leading-relaxed">
                 <p className="text-lg">
                   Segullah Projects is a dynamic and innovative branding company dedicated to helping businesses build powerful, memorable brands. Headquartered <span className="text-orange-500 font-medium">Randfontein, South Africa</span>, we proudly extend our services across regions with offices in Pretoria, South Africa, and Lusaka, Zambia.
