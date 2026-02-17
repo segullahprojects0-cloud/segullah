@@ -28,7 +28,7 @@ const ServicesPage = () => {
     { icon: Megaphone, title: 'Billboard Installation', color: 'text-orange-500', image: '/billboard.jpg' },
     { icon: Image, title: 'Contra Vision', color: 'text-orange-500', image: '/graphic.PNG' },
     { icon: Globe, title: 'Entertainment Websites', color: 'text-orange-500', image: '/branding1.PNG' },
-    { icon: FileText, title: 'DTF Printing', color: 'text-orange-500', image: '/large.jpg' },
+    { icon: FileText, title: 'DTF Printing', color: 'text-orange-500', image: '/dtf.jpg' },
     { icon: BookOpen, title: 'Informational Websites', color: 'text-orange-500', image: '/branding1.PNG' },
     { icon: ShoppingCart, title: 'E-commerce Websites', color: 'text-orange-500', image: '/branding1.PNG' },
   ];
@@ -36,7 +36,7 @@ const ServicesPage = () => {
   const graphicDesign = [
     { icon: MessageSquare, title: 'Social Media Design', image: '/graphic.PNG' },
     { icon: Newspaper, title: 'Blog Graphics', image: '/graphic.PNG' },
-    { icon: Target, title: 'Logo Design', image: '/graphic.PNG' },
+    { icon: Target, title: 'Logo Design', image: '/logos.jpg' },
     { icon: Briefcase, title: 'Portfolios', image: '/branding1.PNG' },
     { icon: FileText, title: 'Flyers', image: '/graphic.PNG' },
     { icon: BookOpen, title: 'Educational Materials', image: '/graphic.PNG' },
@@ -78,7 +78,7 @@ const ServicesPage = () => {
     description:
       'Corporate photography, studio photography, product photography, and professional videography to showcase your brand with clarity and impact.',
     icon: Camera,
-    image: '/graphic.PNG',
+    image: '/photo1.jpg',
   },
     {
       title: 'Brand Roll-out & Management',
